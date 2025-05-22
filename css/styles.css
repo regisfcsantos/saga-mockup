@@ -1,0 +1,184 @@
+/* css/style.css */
+
+/* Reset básico e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #222;
+    padding-top: 80px; /* Espaço para o header fixo */
+}
+
+/* Header Placeholder (Navbar Simulada) */
+.header-placeholder {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    text-align: center;
+    position: fixed; /* Fixa no topo */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex; /* Para alinhar itens na navbar */
+    justify-content: space-between; /* Para espaçar logo e links */
+    align-items: center;
+}
+
+.header-placeholder .logo-header {
+     font-size: 20px;
+     font-weight: bold;
+     color: #FF5A5F; /* Cor do logo */
+     text-decoration: none;
+}
+/* (Futuramente, adicionar estilos para .nav-links aqui) */
+
+
+/* Container Principal (reutilizável para login, cadastro, etc.) */
+.form-container { /* Renomeado de login-container para ser mais genérico */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.form-container h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.form-container .form-subtitle { /* Nova classe para o parágrafo abaixo do título */
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Formulário (reutilizável) */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #484848;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"],     /* Adicionado para outros campos de texto */
+.form-group input[type="url"],      /* Adicionado para campos de URL (link do vídeo) */
+.form-group textarea,              /* Adicionado para campos de texto longos (descrição, regras) */
+.form-group select {               /* Adicionado para campos de seleção */
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s ease-in-out;
+    background-color: #fff; /* Garante fundo branco para inputs */
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="text"]:focus,
+.form-group input[type="url"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #00796b; /* Cor de destaque primária */
+}
+
+/* Botões (reutilizável) */
+.btn { /* Classe base para botões */
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none; /* Para caso use <a> como botão */
+    display: inline-block; /* Para <a> se comportar como botão */
+}
+
+.btn-primary {
+    background-color: #FF5A5F; /* Cor primária (ex: Login, Criar) */
+}
+.btn-primary:hover {
+    background-color: #e0484c;
+}
+
+.btn-secondary {
+    background-color: #00796b; /* Cor secundária (ex: Ver Detalhes, Salvar) */
+}
+.btn-secondary:hover {
+    background-color: #005f56;
+}
+
+.btn-link-style { /* Para links que parecem botões mas sem fundo */
+    background-color: transparent;
+    color: #00796b;
+    padding: 10px;
+    font-weight: 500;
+    width: auto;
+}
+.btn-link-style:hover {
+    text-decoration: underline;
+}
+
+
+/* Links Adicionais (reutilizável) */
+.additional-links {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.additional-links a {
+    color: #00796b; /* Cor para links */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.additional-links a:hover {
+    text-decoration: underline;
+}
+
+.additional-links p { /* Ajustado para não ter margem inferior por padrão aqui */
+    color: #555;
+    line-height: 1.6;
+}
+.additional-links p + p { /* Adiciona margem superior se houver um p anterior */
+    margin-top: 10px;
+}
+
+/* Logo (Placeholder de texto) */
+.logo-placeholder {
+    font-size: 28px;
+    font-weight: bold;
+    color: #FF5A5F;
+    margin-bottom: 30px;
+}
