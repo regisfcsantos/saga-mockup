@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Competição - Fitness Challenges</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header-placeholder">
+        <a href="index.html" class="logo-header">FitnessChallenges</a>
+        </header>
+
+    <main class="form-container form-container-large"> <h1>Criar Nova Competição</h1>
+        <p class="form-subtitle">Defina todos os detalhes para o seu novo desafio!</p>
+
+        <form action="meu-perfil.html" method="GET" id="competitionForm">
+
+            <div class="form-group">
+                <label for="compName">Nome da Competição/Desafio</label>
+                <input type="text" id="compName" name="compName" placeholder="Ex: Desafio de Flexões 30 Dias" required>
+            </div>
+
+            <div class="form-group">
+                <label for="compDescription">Descrição Completa</label>
+                <textarea id="compDescription" name="compDescription" placeholder="Descreva o desafio, o que será avaliado, para quem se destina, etc." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="compRules">Regras</label>
+                <textarea id="compRules" name="compRules" placeholder="Liste as regras detalhadamente (ex: formato do vídeo, critérios de validação, etc.)" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="compBanner">Imagem/Banner da Competição</label>
+                <input type="file" id="compBanner" name="compBanner" accept="image/*">
+                <small>Uma imagem atrativa ajuda a divulgar seu desafio.</small>
+            </div>
+
+            <div class="form-group-pair">
+                <div class="form-group">
+                    <label for="compPrice">Preço de Participação (R$)</label>
+                    <input type="number" id="compPrice" name="compPrice" placeholder="0.00 (para grátis, deixe 0)" min="0" step="0.01" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="compStatus">Status Inicial</label>
+                    <select id="compStatus" name="compStatus">
+                        <option value="rascunho" selected>Rascunho (Não visível para atletas)</option>
+                        <option value="publicada">Publicada (Visível e aberta para inscrições)</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="compAwards">Premiação</label>
+                <textarea id="compAwards" name="compAwards" placeholder="Descreva os prêmios para os vencedores (1º, 2º, 3º lugar, etc.)"></textarea>
+            </div>
+
+            <h3 style="margin-top: 30px; margin-bottom: 10px; font-weight:500; border-bottom:1px solid #eee; padding-bottom:10px;">Datas Importantes</h3>
+
+            <div class="form-group-pair">
+                <div class="form-group">
+                    <label for="dateInscricaoInicio">Início das Inscrições</label>
+                    <input type="date" id="dateInscricaoInicio" name="dateInscricaoInicio" required>
+                </div>
+                <div class="form-group">
+                    <label for="dateInscricaoFim">Fim das Inscrições</label>
+                    <input type="date" id="dateInscricaoFim" name="dateInscricaoFim" required>
+                </div>
+            </div>
+
+            <div class="form-group-pair">
+                <div class="form-group">
+                    <label for="dateEnvioInicio">Início para Envio de Provas</label>
+                    <input type="date" id="dateEnvioInicio" name="dateEnvioInicio">
+                </div>
+                <div class="form-group">
+                    <label for="dateEnvioFim">Fim para Envio de Provas</label>
+                    <input type="date" id="dateEnvioFim" name="dateEnvioFim">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="dateResultados">Data de Divulgação dos Resultados</label>
+                <input type="date" id="dateResultados" name="dateResultados">
+            </div>
+
+            <div class="form-actions" style="margin-top: 30px;">
+                <button type="submit" class="btn btn-primary">Salvar e Publicar</button>
+                <button type="button" class="btn btn-secondary" onclick="alert('Competição salva como rascunho (simulação).')">Salvar Rascunho</button>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        document.getElementById('competitionForm').addEventListener('submit', function(event) {
+            alert('Competição criada/atualizada com sucesso (simulação)!');
+        });
+    </script>
+
+</body>
+</html>

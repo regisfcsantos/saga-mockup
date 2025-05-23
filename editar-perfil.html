@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil - Fitness Challenges</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header-placeholder">
+        <a href="index.html" class="logo-header">FitnessChallenges</a>
+    </header>
+
+    <main class="form-container">
+        <h1>Editar Perfil</h1>
+        <p class="form-subtitle">Atualize suas informações pessoais e de perfil.</p>
+
+        <form action="meu-perfil.html" method="GET">
+
+            <div class="form-group">
+                <label for="profilePic">Foto de Perfil</label>
+                <img src="assets/images/profile_placeholder.png" alt="Preview da foto de perfil" class="profile-pic-preview" id="picPreview">
+                <input type="file" id="profilePic" name="profilePic" accept="image/*">
+                <small>Envie uma nova foto para atualizar.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="fullName">Nome Completo</label>
+                <input type="text" id="fullName" name="fullName" value="Nome do Usuário Atual" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bio">Sua Bio</label>
+                <textarea id="bio" name="bio" rows="4" placeholder="Fale um pouco sobre você, seus objetivos ou especialidades...">Esta é uma breve biografia do usuário. Pode ser sobre seus interesses em fitness, suas especialidades como criador de desafios, ou suas metas como atleta. Este texto é um placeholder.</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Endereço de e-mail</label>
+                <input type="email" id="email" name="email" value="usuario@exemplo.com" disabled>
+                <small>O e-mail não pode ser alterado através desta página (simulação).</small>
+            </div>
+
+            <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+
+            <h3>Alterar Senha (Opcional)</h3>
+            <div class="form-group">
+                <label for="currentPassword">Senha Atual</label>
+                <input type="password" id="currentPassword" name="currentPassword" placeholder="Deixe em branco para não alterar">
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Nova Senha</label>
+                <input type="password" id="newPassword" name="newPassword" placeholder="Mínimo 6 caracteres">
+            </div>
+            <div class="form-group">
+                <label for="confirmNewPassword">Confirmar Nova Senha</label>
+                <input type="password" id="confirmNewPassword" name="confirmNewPassword">
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                <a href="meu-perfil.html" class="btn btn-cancel">Cancelar</a>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        const profilePicInput = document.getElementById('profilePic');
+        const picPreview = document.getElementById('picPreview');
+        if (profilePicInput && picPreview) {
+            profilePicInput.onchange = evt => {
+                const [file] = profilePicInput.files;
+                if (file) {
+                    picPreview.src = URL.createObjectURL(file);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

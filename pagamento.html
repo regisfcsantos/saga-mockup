@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - Fitness Challenges</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header-placeholder">
+        <a href="index.html" class="logo-header">FitnessChallenges</a>
+        </header>
+
+    <main class="form-container" style="max-width: 500px;"> <h1>Finalizar Inscrição</h1>
+        <p class="form-subtitle">Complete os detalhes do pagamento para garantir sua vaga.</p>
+
+        <div class="payment-summary">
+            <h2>Resumo da Inscrição</h2>
+            <p><strong>Competição:</strong> Desafio Força Total (Nome da Competição Dinâmico)</p>
+            <p><strong>Organizador:</strong> Academia PowerMax (Nome do Organizador Dinâmico)</p>
+            <p class="total-amount">Valor Total: R$ 29,90 (Valor Dinâmico)</p>
+        </div>
+
+        <form action="meu-perfil.html" method="GET" id="paymentForm">
+            <div class="form-group">
+                <label for="cardName">Nome no Cartão</label>
+                <input type="text" id="cardName" name="cardName" placeholder="Como aparece no cartão" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cardNumber">Número do Cartão</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="0000 0000 0000 0000" required>
+            </div>
+
+            <div class="form-group" style="display: flex; gap: 15px;">
+                <div style="flex-grow: 1;">
+                    <label for="expiryDate">Validade (MM/AA)</label>
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/AA" required>
+                </div>
+                <div style="flex-grow: 1;">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Pagar e Confirmar Inscrição</button>
+        </form>
+
+        <div class="additional-links">
+            <p><a href="detalhes-competicao.html">Cancelar e voltar para detalhes</a></p>
+        </div>
+    </main>
+
+    <script>
+        // Simples simulação de alerta de sucesso antes de redirecionar
+        // Em um app real, aqui haveria validação e processamento do pagamento.
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            // event.preventDefault(); // Descomente para evitar o redirecionamento real se precisar testar algo antes
+            alert('Pagamento processado com sucesso (simulação)! Você será redirecionado.');
+            // O formulário continuará para o 'action' especificado
+        });
+    </script>
+
+</body>
+</html>

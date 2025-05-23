@@ -2,16 +2,74 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Teste Saga Mockup</title>
-    <link rel="stylesheet" href="css/style.css"> </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Challenges - Competições</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
+
     <header class="header-placeholder">
         <a href="index.html" class="logo-header">FitnessChallenges</a>
+        <nav class="nav-links">
+            </nav>
     </header>
-    <div style="text-align: center; padding: 50px;">
-        <h1>Página de Teste Funciona!</h1>
-        <p>Se você está vendo isso, o GitHub Pages está configurado corretamente.</p>
-        <p><a href="login.html">Ir para Login</a></p>
-    </div>
+
+    <main class="main-content">
+        <h1 class="page-title">Explore Desafios e Competições</h1>
+        <p class="page-subtitle">Encontre a competição perfeita para você e supere seus limites!</p>
+
+        <section class="creator-actions">
+            <p>Pronto para inspirar atletas? Crie seu próprio desafio!</p>
+            <a href="criar-editar-competicao.html" class="btn btn-secondary" style="width: auto;">+ Criar Nova Competição</a>
+        </section>
+
+        <div class="filter-bar">
+            <input type="text" placeholder="Buscar por nome da competição..." class="form-group">
+            <select class="form-group">
+                <option value="" disabled selected>Tipo de Desafio</option>
+                <option value="corrida">Corrida</option>
+                <option value="crossfit">Crossfit</option>
+                <option value="forca">Força</option>
+                <option value="flexibilidade">Flexibilidade</option>
+            </select>
+            <button class="btn btn-primary">Filtrar</button>
+        </div>
+
+        <section class="competition-grid">
+            <article class="competition-card">
+                <img src="assets/images/competition_placeholder_1.jpg" alt="Banner da Competição Força Total" class="competition-card-image">
+                <div class="competition-card-content">
+                    <h3>Desafio Força Total</h3>
+                    <p class="creator-info">Por: Academia PowerMax</p>
+                    <p class="price-info">R$ 29,90</p>
+                    <p class="status-info open">Inscrições Abertas (até 30/06)</p>
+                    <a href="detalhes-competicao.html?id=forca-total" class="btn btn-primary">Ver Detalhes</a>
+                </div>
+            </article>
+
+            <article class="competition-card">
+                <img src="assets/images/competition_placeholder_2.jpg" alt="Banner da Competição Corrida Matinal" class="competition-card-image">
+                <div class="competition-card-content">
+                    <h3>Corrida Matinal 5K</h3>
+                    <p class="creator-info">Por: Clube de Corredores Urbanos</p>
+                    <p class="price-info free">Grátis</p>
+                    <p class="status-info open">Inscrições Abertas (até 15/06)</p>
+                    <a href="detalhes-competicao.html?id=corrida-5k" class="btn btn-primary">Ver Detalhes</a>
+                </div>
+            </article>
+
+            <article class="competition-card">
+                <img src="assets/images/competition_placeholder_3.jpg" alt="Banner da Competição Yoga Challenge" class="competition-card-image">
+                <div class="competition-card-content">
+                    <h3>Yoga Flexibility Challenge</h3>
+                    <p class="creator-info">Por: Studio Zen</p>
+                    <p class="price-info">R$ 15,00</p>
+                    <p class="status-info closed">Inscrições Encerradas</p>
+                    <a href="detalhes-competicao.html?id=yoga-flex" class="btn btn-secondary">Ver Resultados</a> </div>
+            </article>
+
+            </section>
+    </main>
+
 </body>
 </html>
