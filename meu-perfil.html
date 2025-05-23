@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - Fitness Challenges</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header-placeholder">
+        <a href="index.html" class="logo-header">FitnessChallenges</a>
+        </header>
+
+    <div class="profile-page-container">
+        <section class="profile-header">
+            <img src="assets/images/profile_placeholder.png" alt="Foto do Perfil" class="profile-picture">
+            <div class="profile-info">
+                <h1>Nome do Usuário (Atleta/Criador)</h1>
+                <p class="user-bio">
+                    Esta é uma breve biografia do usuário. Pode ser sobre seus interesses em fitness,
+                    suas especialidades como criador de desafios, ou suas metas como atleta.
+                    Este texto é um placeholder.
+                </p>
+                <a href="editar-perfil.html" class="btn btn-secondary btn-edit-profile">Editar Perfil</a>
+            </div>
+        </section>
+
+        <section class="profile-section" id="atleta-section">
+            <h2>Minhas Conquistas (Atleta)</h2>
+            <p><strong>Pontuação Geral:</strong> 1250 Pontos</p>
+
+            <h3>Histórico de Competições Participadas:</h3>
+            <ul class="item-list">
+                <li>
+                    <h3>Desafio Crossfit Semanal #10</h3>
+                    <p><strong>Colocação:</strong> 5º Lugar</p>
+                    <p><strong>Premiação:</strong> Medalha de Participação</p>
+                </li>
+                <li>
+                    <h3>Maratona de Burpees</h3>
+                    <p><strong>Colocação:</strong> 1º Lugar</p>
+                    <p><strong>Premiação:</strong> R$ 100 + Suplementos</p>
+                </li>
+                <li>
+                    <h3>Desafio de Flexões Mensal</h3>
+                    <p><strong>Colocação:</strong> 12º Lugar</p>
+                    <p><strong>Premiação:</strong> N/A</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="profile-section" id="criador-section">
+            <h2>Minhas Competições (Criador)</h2>
+            <a href="criar-editar-competicao.html" class="btn btn-primary btn-create-competition" style="margin-bottom: 20px; width: auto; display: inline-block;">
+                + Criar Nova Competição
+            </a>
+
+            <h3>Competições Criadas:</h3>
+            <ul class="item-list">
+                <li>
+                    <h3>Desafio de Verão - Queima Total</h3>
+                    <p><strong>Status:</strong> Aberta para inscrições</p>
+                    <p><strong>Participantes:</strong> 37</p>
+                    <p><a href="detalhes-competicao.html?id=verao" class="btn-link-style">Ver Detalhes</a> | <a href="analisar-envios-competicao.html?id=verao" class="btn-link-style">Analisar Envios</a></p>
+                </li>
+                <li>
+                    <h3>Campeonato de Levantamento Terra</h3>
+                    <p><strong>Status:</strong> Em Andamento (Envios Abertos)</p>
+                    <p><strong>Participantes:</strong> 15</p>
+                    <p><a href="detalhes-competicao.html?id=terra" class="btn-link-style">Ver Detalhes</a> | <a href="analisar-envios-competicao.html?id=terra" class="btn-link-style">Analisar Envios</a></p>
+
+                </li>
+                <li>
+                    <h3>Corrida Virtual 5K - Outubro Rosa</h3>
+                    <p><strong>Status:</strong> Finalizada</p>
+                    <p><strong>Participantes:</strong> 152</p>
+                    <p><a href="detalhes-competicao.html?id=corrida" class="btn-link-style">Ver Resultados</a></p>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    </body>
+</html>

@@ -182,3 +182,112 @@ body {
     color: #FF5A5F;
     margin-bottom: 30px;
 }
+
+/* Adicione estas novas classes ao final do seu arquivo css/style.css */
+
+/* Estilos da Página de Perfil */
+.profile-page-container {
+    width: 100%;
+    max-width: 800px; /* Perfis podem ser um pouco mais largos */
+    margin: 20px auto; /* Centraliza e dá espaço do header */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Foto redonda */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    margin-right: 20px;
+    border: 3px solid #eee;
+}
+
+.profile-info h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.profile-info .user-bio {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.profile-info .btn-edit-profile { /* Estilo para o botão de editar perfil */
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 8px 15px;
+    font-size: 14px;
+    width: auto; /* Não ocupa 100% da largura */
+    margin-top: 0;
+}
+.profile-info .btn-edit-profile:hover {
+    background-color: #e0e0e0;
+}
+
+/* Seções do Perfil (Histórico, Competições Criadas) */
+.profile-section {
+    margin-top: 30px;
+}
+
+.profile-section h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.item-list { /* Para listas de competições, etc. */
+    list-style: none;
+    padding: 0;
+}
+
+.item-list li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #e9e9e9;
+}
+
+.item-list li h3 { /* Nome da competição na lista */
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #00796b; /* Cor de destaque */
+}
+
+.item-list li p { /* Detalhes da competição (status, colocação) */
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 3px;
+}
+.item-list li p strong {
+    color: #444;
+}
+
+/* Para o botão "Criar Nova Competição" no perfil do criador */
+.btn-create-competition {
+    margin-top: 10px; /* Para dar espaço se estiver abaixo do título da seção */
+}
+
+/* Ajuste para o body para garantir que o conteúdo não fique colado no header */
+body {
+    /* ... seus estilos de body existentes ... */
+    padding-top: 70px; /* Garanta que o padding-top seja suficiente para seu header fixo */
+}
