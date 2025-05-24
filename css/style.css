@@ -756,3 +756,88 @@ body {
     border-top: 1px solid #ccc;
     text-align: center;
 }
+
+/* css/style.css - Adicionar ao final */
+
+/* Estilos para a Página de Notificações */
+.notifications-page-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.notification-list {
+    list-style: none;
+    padding: 0;
+}
+
+.notification-item {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    border-left: 5px solid transparent; /* Para indicar tipo ou status */
+    transition: background-color 0.2s ease;
+}
+
+.notification-item:hover {
+    background-color: #f9f9f9;
+}
+
+.notification-item.unread {
+    background-color: #f0f8ff; /* Um azul bem claro para não lidas */
+    border-left-color: #007bff; /* Azul para "não lida" ou "info" */
+}
+
+.notification-item.success { /* Para notificações de sucesso, como pagamento */
+    border-left-color: #28a745; /* Verde */
+}
+.notification-item.warning { /* Para lembretes, prazos */
+    border-left-color: #ffc107; /* Amarelo */
+}
+.notification-item.error { /* Para falhas, embora menos comum em mockups */
+    border-left-color: #dc3545; /* Vermelho */
+}
+
+
+.notification-icon { /* Opcional: se você quiser adicionar ícones */
+    margin-right: 15px;
+    font-size: 24px; /* Ajuste conforme o tamanho do ícone */
+    /* Exemplo: .notification-icon.info { color: #007bff; } */
+}
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-content p {
+    margin: 0;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.5;
+}
+.notification-content p a {
+    font-weight: 500;
+    color: #0056b3; /* Link um pouco mais escuro dentro da notificação */
+    text-decoration: none;
+}
+.notification-content p a:hover {
+    text-decoration: underline;
+}
+
+.notification-meta {
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.no-notifications {
+    text-align: center;
+    padding: 30px;
+    font-size: 18px;
+    color: #777;
+    background-color

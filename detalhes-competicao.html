@@ -11,7 +11,12 @@
 
     <header class="header-placeholder">
         <a href="index.html" class="logo-header">FitnessChallenges</a>
-        </header>
+        <nav class="nav-links">
+            <a href="index.html" class="[active_se_index]">Competições</a>
+            <a href="meu-perfil.html" class="[active_se_meu_perfil]">Meu Perfil</a>
+            <a href="notificacoes.html" class="[active_se_notificacoes]">Notificações <span class="notification-badge">3</span></a>
+            <a href="login.html">Sair</a> </nav>
+    </header>
 
     <article class="competition-detail-page">
         <img src="assets/images/competition_placeholder_1.jpg" alt="Banner da Competição Força Total" class="competition-banner-large">
@@ -24,7 +29,8 @@
                 <p class="price-display">R$ 29,90</p>
                 <p class="deadline-info">Inscrições abertas até: 30 de Junho de 2025</p>
                 <a href="pagamento.html?id=forca-total" class="btn btn-primary">Inscrever-se Agora</a>
-                </section>
+                <a href="submeter-video.html?id=ID_DA_COMPETICAO" class="btn btn-secondary" style="margin-top:10px;">Enviar Vídeo da Prova</a>
+            </section>
 
             <section class="competition-section" id="descricao">
                 <h2>Descrição</h2>
@@ -83,6 +89,13 @@
             </section>
 
         </div>
+
+        <div style="margin-top:15px; padding-top:15px; border-top:1px solid #eee;">
+            <h4>Ações do Organizador:</h4>
+            <a href="criar-editar-competicao.html?id=ID_DA_COMPETICAO&action=edit" class="btn btn-secondary btn-edit-profile" style="margin-right:10px;">Editar Competição</a>
+            <a href="analisar-envios-competicao.html?id=ID_DA_COMPETICAO" class="btn btn-secondary btn-edit-profile">Analisar Envios</a>
+        </div>
+
     </article>
 
 </body>

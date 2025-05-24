@@ -10,19 +10,29 @@
 
     <header class="header-placeholder">
         <a href="index.html" class="logo-header">FitnessChallenges</a>
-        </header>
+        <nav class="nav-links">
+            <a href="index.html">Competições</a>
+            <a href="meu-perfil.html">Meu Perfil</a>
+            <a href="notificacoes.html">Notificações <span class="notification-badge">3</span></a>
+            <a href="login.html">Sair</a>
+        </nav>
+    </header>
 
-    <main class="form-container" style="max-width: 500px;"> <h1>Finalizar Inscrição</h1>
+    <main class="form-container" style="max-width: 500px;">
+        <h1>Finalizar Inscrição</h1>
         <p class="form-subtitle">Complete os detalhes do pagamento para garantir sua vaga.</p>
 
         <div class="payment-summary">
             <h2>Resumo da Inscrição</h2>
-            <p><strong>Competição:</strong> Desafio Força Total (Nome da Competição Dinâmico)</p>
-            <p><strong>Organizador:</strong> Academia PowerMax (Nome do Organizador Dinâmico)</p>
-            <p class="total-amount">Valor Total: R$ 29,90 (Valor Dinâmico)</p>
+            <p><strong>Competição:</strong> Desafio Força Total</p>
+            <p><strong>Organizador:</strong> Academia PowerMax</p>
+            <p class="total-amount">Valor Total: R$ 29,90</p>
         </div>
 
-        <form action="meu-perfil.html" method="GET" id="paymentForm">
+        <form action="detalhes-competicao.html" method="GET" id="paymentForm">
+            <input type="hidden" name="id" value="forca-total">
+            <input type="hidden" name="inscricao_sucesso" value="true">
+
             <div class="form-group">
                 <label for="cardName">Nome no Cartão</label>
                 <input type="text" id="cardName" name="cardName" placeholder="Como aparece no cartão" required>
@@ -48,17 +58,16 @@
         </form>
 
         <div class="additional-links">
-            <p><a href="detalhes-competicao.html">Cancelar e voltar para detalhes</a></p>
+            <p><a href="detalhes-competicao.html?id=forca-total">Cancelar e voltar para detalhes</a></p>
         </div>
     </main>
 
     <script>
-        // Simples simulação de alerta de sucesso antes de redirecionar
-        // Em um app real, aqui haveria validação e processamento do pagamento.
         document.getElementById('paymentForm').addEventListener('submit', function(event) {
-            // event.preventDefault(); // Descomente para evitar o redirecionamento real se precisar testar algo antes
-            alert('Pagamento processado com sucesso (simulação)! Você será redirecionado.');
-            // O formulário continuará para o 'action' especificado
+            // event.preventDefault(); // Descomente para testes se não quiser redirecionar
+            alert('Pagamento processado com sucesso (simulação)! Você será redirecionado para os detalhes da competição.');
+            // O formulário continuará para o 'action' especificado,
+            // enviando os parâmetros (incluindo os hidden 'id' e 'inscricao_sucesso')
         });
     </script>
 
