@@ -636,3 +636,123 @@ body {
 .form-group-pair {
     margin-bottom: 20px; /* Adiciona margem abaixo do grupo par */
 }
+
+/* css/style.css - Adicionar ao final, se necessário */
+
+.submission-guidelines {
+    background-color: #e9f5f3; /* Um fundo suave, como o de .creator-actions */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #c0ded9;
+}
+
+.submission-guidelines h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #00796b; /* Cor de destaque */
+    margin-bottom: 10px;
+}
+
+.submission-guidelines ul {
+    list-style-position: inside;
+    padding-left: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.submission-guidelines ul li {
+    margin-bottom: 5px;
+}
+
+/* css/style.css - Adicionar ao final */
+
+/* Estilos para a Página de Análise de Envios */
+.analysis-page-container {
+    width: 100%;
+    max-width: 900px; /* Pode ser mais largo para mostrar tabelas/listas */
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.submission-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    margin-bottom: 20px;
+}
+
+.submission-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.submission-item-header h3 { /* Nome do Atleta */
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.submission-item-header .submission-date { /* Data do envio */
+    font-size: 13px;
+    color: #777;
+}
+
+.video-link-container {
+    margin-bottom: 15px;
+}
+.video-link-container a {
+    font-weight: 500;
+    color: #00796b;
+    text-decoration: none;
+    word-break: break-all; /* Quebra links longos */
+}
+.video-link-container a:hover {
+    text-decoration: underline;
+}
+.video-link-container p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+
+.evaluation-form {
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.evaluation-form .form-group {
+    margin-bottom: 10px; /* Menor margem entre os campos de avaliação */
+}
+.evaluation-form .form-group label {
+    font-size: 14px;
+    font-weight: 500;
+}
+.evaluation-form .form-group input[type="number"],
+.evaluation-form .form-group textarea {
+    padding: 8px 12px; /* Campos um pouco menores */
+    font-size: 15px;
+}
+.evaluation-form .form-group textarea {
+    min-height: 60px;
+}
+
+
+.evaluation-form .btn { /* Botão de salvar nota */
+    width: auto; /* Não ocupa 100% */
+    padding: 8px 15px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.finalize-analysis-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}

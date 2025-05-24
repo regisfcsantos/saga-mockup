@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisar Envios - Fitness Challenges</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header-placeholder">
+        <a href="index.html" class="logo-header">FitnessChallenges</a>
+        </header>
+
+    <main class="analysis-page-container">
+        <h1 class="page-title">Analisar Envios: [Nome da Competição Dinâmico]</h1>
+        <p class="page-subtitle">Avalie os vídeos enviados pelos participantes e atribua as notas.</p>
+
+        <section class="submission-list">
+
+            <article class="submission-item">
+                <div class="submission-item-header">
+                    <h3>Atleta: Carlos Silva</h3>
+                    <span class="submission-date">Enviado em: 20/05/2025</span>
+                </div>
+                <div class="video-link-container">
+                    <strong>Link do Vídeo:</strong> <a href="https://youtu.be/exemplolink1" target="_blank">https://youtu.be/exemplolink1</a>
+                    <p><em>Comentários do Atleta:</em> Dei o meu melhor neste desafio!</p>
+                </div>
+                <form class="evaluation-form" onsubmit="alert('Nota salva para Carlos Silva (simulação)!'); return false;">
+                    <div class="form-group">
+                        <label for="score_carlos">Nota (0 a 100):</label>
+                        <input type="number" id="score_carlos" name="score" min="0" max="100" step="1" style="width: 100px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback_carlos">Feedback para o Atleta (Opcional):</label>
+                        <textarea id="feedback_carlos" name="feedback_carlos" rows="2"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Salvar Nota</button>
+                </form>
+            </article>
+
+            <article class="submission-item">
+                <div class="submission-item-header">
+                    <h3>Atleta: Mariana Oliveira</h3>
+                    <span class="submission-date">Enviado em: 21/05/2025</span>
+                </div>
+                <div class="video-link-container">
+                    <strong>Link do Vídeo:</strong> <a href="https://vimeo.com/exemplolink2" target="_blank">https://vimeo.com/exemplolink2</a>
+                    <p><em>Comentários do Atleta:</em> Espero que gostem da minha performance.</p>
+                </div>
+                <form class="evaluation-form" onsubmit="alert('Nota salva para Mariana Oliveira (simulação)!'); return false;">
+                    <div class="form-group">
+                        <label for="score_mariana">Nota (0 a 100):</label>
+                        <input type="number" id="score_mariana" name="score" min="0" max="100" step="1" style="width: 100px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback_mariana">Feedback para o Atleta (Opcional):</label>
+                        <textarea id="feedback_mariana" name="feedback_mariana" rows="2"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Salvar Nota</button>
+                </form>
+            </article>
+
+            </section>
+
+        <section class="finalize-analysis-section">
+            <button type="button" class="btn btn-primary" style="padding: 15px 30px; font-size: 18px;" onclick="alert('Análises finalizadas e resultados divulgados (simulação)!')">
+                Finalizar Análises e Divulgar Resultados
+            </button>
+        </section>
+
+    </main>
+
+</body>
+</html>

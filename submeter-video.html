@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Vídeo - Fitness Challenges</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header-placeholder">
+        <a href="index.html" class="logo-header">FitnessChallenges</a>
+        </header>
+
+    <main class="form-container">
+        <h1>Enviar Vídeo para: [Nome da Competição Dinâmico]</h1>
+        <p class="form-subtitle">Cole o link do seu vídeo e confirme o envio. Boa sorte!</p>
+
+        <div class="submission-guidelines">
+            <h3>Lembretes Importantes:</h3>
+            <ul>
+                <li>Verifique se seu vídeo está público ou não listado (não privado).</li>
+                <li>Confira se o vídeo cumpre todas as regras da competição.</li>
+                <li>O link não poderá ser alterado após o envio.</li>
+            </ul>
+        </div>
+
+        <form action="detalhes-competicao.html" method="GET" id="videoSubmissionForm">
+            <input type="hidden" name="competicaoId" value="nome-da-competicao-dinamico">
+            <input type="hidden" name="submission_status" value="success"> <div class="form-group">
+                <label for="videoLink">Link do Vídeo (YouTube, Vimeo, etc.)</label>
+                <input type="url" id="videoLink" name="videoLink" placeholder="https://youtube.com/seu-video" required>
+            </div>
+
+            <div class="form-group">
+                <label for="videoComments">Comentários Adicionais (Opcional)</label>
+                <textarea id="videoComments" name="videoComments" rows="3" placeholder="Alguma observação sobre seu envio?"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Confirmar Envio do Vídeo</button>
+        </form>
+
+        <div class="additional-links">
+            <p><a href="detalhes-competicao.html">Cancelar e voltar para detalhes da competição</a></p>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('videoSubmissionForm').addEventListener('submit', function(event) {
+            // event.preventDefault(); // Descomente para testes se não quiser redirecionar
+            const videoLink = document.getElementById('videoLink').value;
+            if (videoLink) {
+                alert('Vídeo enviado com sucesso (simulação)! Você será redirecionado.');
+            } else {
+                alert('Por favor, insira o link do vídeo.');
+                event.preventDefault(); // Impede o envio se o link estiver vazio
+            }
+            // O formulário continuará para o 'action' especificado
+        });
+    </script>
+
+</body>
+</html>
