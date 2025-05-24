@@ -28,8 +28,8 @@
             <section class="competition-main-actions">
                 <p class="price-display">R$ 29,90</p>
                 <p class="deadline-info">Inscrições abertas até: 30 de Junho de 2025</p>
-                <a href="pagamento.html?id=forca-total" class="btn btn-primary">Inscrever-se Agora</a>
-                <a href="submeter-video.html?id=ID_DA_COMPETICAO" class="btn btn-secondary" style="margin-top:10px;">Enviar Vídeo da Prova</a>
+                <a href="pagamento.html?id=forca-total" id="subscribeButton" class="btn btn-primary" style="display: none;">Inscrever-se Agora</a>
+                <a href="submeter-video.html?id=ID_DA_COMPETICAO" id="submitVideoButton" class="btn btn-secondary" style="margin-top:10px; display: none;">Enviar Vídeo da Prova</a>
             </section>
 
             <section class="competition-section" id="descricao">
@@ -88,7 +88,7 @@
                 <p>Dúvidas? Entre em contato com a Academia PowerMax pelo email <a href="mailto:contato@powermax.com.fake">contato@powermax.com.fake</a> ou visite nosso <a href="#">website</a>.</p>
             </section>
 
-            <section class="competition-section" id="organizador">
+            <section class="competition-section" id="organizador" style="display: none;">
                 <div style="margin-top:15px; padding-top:15px; border-top:1px solid #eee;">
                     <h4>Ações do Organizador:</h4>
                     <a href="criar-editar-competicao.html?id=ID_DA_COMPETICAO&action=edit" class="btn btn-secondary btn-edit-profile" style="margin-right:10px;">Editar Competição</a>
@@ -99,6 +99,34 @@
         </div>
 
     </article>
+
+    <script src="js/auth.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userRole = localStorage.getItem('userRole');
+
+            const organizerActionsSection = document.getElementById('organizador');
+            const subscribeButton = document.getElementById('subscribeButton');
+            const submitVideoButton = document.getElementById('submitVideoButton');
+
+            if (userRole === 'criador') {
+                if (organizerActionsSection) organizerActionsSection.style.display = 'block';
+                // Criadores não veem botões de se inscrever ou enviar vídeo
+                if (subscribeButton) subscribeButton.style.display = 'none';
+                if (submitVideoButton) submitVideoButton.style.display = 'none';
+            } else if (userRole === 'atleta') {
+                if (organizerActionsSection) organizerActionsSection.style.display = 'none';
+                // Atletas veem botões de se inscrever e enviar vídeo
+                if (subscribeButton) subscribeButton.style.display = 'block'; // Ou 'inline-block' dependendo do seu CSS base
+                if (submitVideoButton) submitVideoButton.style.display = 'block'; // Ou 'inline-block'
+            } else {
+                // Se não estiver logado, não mostra ações do organizador nem botões de atleta
+                if (organizerActionsSection) organizerActionsSection.style.display = 'none';
+                if (subscribeButton) subscribeButton.style.display = 'none';
+                if (submitVideoButton) submitVideoButton.style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 </html>

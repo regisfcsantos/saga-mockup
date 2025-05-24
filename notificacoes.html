@@ -21,44 +21,83 @@
     <main class="notifications-page-container">
         <h1 class="page-title">Minhas Notificações</h1>
 
-        <ul class="notification-list">
-            <li class="notification-item unread">
-                <div class="notification-content">
-                    <p>Sua nota na competição "<strong>Desafio Força Total</strong>" foi liberada! <a href="detalhes-competicao.html?id=forca-total#resultados">Veja aqui</a>.</p>
-                    <span class="notification-meta">Há 5 minutos</span>
-                </div>
-            </li>
+            
+        <div id="athlete-notifications-container" style="display:none;">
 
-            <li class="notification-item success">
-                <div class="notification-content">
-                    <p>Parabéns! Você se inscreveu com sucesso na competição "<strong>Corrida Matinal 5K</strong>". <a href="detalhes-competicao.html?id=corrida-5k">Ver detalhes</a>.</p>
-                    <span class="notification-meta">Há 2 horas</span>
-                </div>
-            </li>
+            <ul class="notification-list">
+        
+                <li class="notification-item unread">
+                    <div class="notification-content">
+                        <p>Sua nota na competição "<strong>Desafio Força Total</strong>" foi liberada! <a href="detalhes-competicao.html?id=forca-total#resultados">Veja aqui</a>.</p>
+                        <span class="notification-meta">Há 5 minutos</span>
+                    </div>
+                </li>
 
-            <li class="notification-item warning">
-                <div class="notification-content">
-                    <p>Lembrete: O prazo para enviar seu vídeo para "<strong>Desafio Crossfit Semanal #10</strong>" termina em 2 dias. <a href="submeter-video.html?id=crossfit-10">Enviar agora</a>.</p>
-                    <span class="notification-meta">Ontem, às 15:30</span>
-                </div>
-            </li>
+                <li class="notification-item success">
+                    <div class="notification-content">
+                        <p>Parabéns! Você se inscreveu com sucesso na competição "<strong>Corrida Matinal 5K</strong>". <a href="detalhes-competicao.html?id=corrida-5k">Ver detalhes</a>.</p>
+                        <span class="notification-meta">Há 2 horas</span>
+                    </div>
+                </li>
 
-            <li class="notification-item">
-                <div class="notification-content">
-                    <p><strong>Mariana Oliveira</strong> enviou o vídeo para sua competição "<strong>Yoga Flexibility Challenge</strong>". <a href="analisar-envios-competicao.html?id=yoga-flex">Analisar envio</a>.</p>
-                    <span class="notification-meta">20 de Maio de 2025, 10:00</span>
-                </div>
-            </li>
+                <li class="notification-item warning">
+                    <div class="notification-content">
+                        <p>Lembrete: O prazo para enviar seu vídeo para "<strong>Desafio Crossfit Semanal #10</strong>" termina em 2 dias. <a href="submeter-video.html?id=crossfit-10">Enviar agora</a>.</p>
+                        <span class="notification-meta">Ontem, às 15:30</span>
+                    </div>
+                </li>
 
-            <li class="notification-item">
-                <div class="notification-content">
-                    <p>Nova competição publicada: "<strong>Desafio de Verão - Queima Total</strong>"! <a href="detalhes-competicao.html?id=desafio-verao">Confira e participe</a>.</p>
-                    <span class="notification-meta">19 de Maio de 2025, 17:00</span>
-                </div>
-            </li>
-
+                <li class="notification-item">
+                    <div class="notification-content">
+                        <p>Nova competição publicada: "<strong>Desafio de Verão - Queima Total</strong>"! <a href="detalhes-competicao.html?id=desafio-verao">Confira e participe</a>.</p>
+                        <span class="notification-meta">19 de Maio de 2025, 17:00</span>
+                    </div>
+                </li>
             </ul>
+
+        </div>
+
+        <div id="creator-notifications-container" style="display:none;">
+            <ul class="notification-list"></ul>
+                <li class="notification-item">
+                    <div class="notification-content">
+                        <p><strong>Mariana Oliveira</strong> enviou o vídeo para sua competição "<strong>Yoga Flexibility Challenge</strong>". <a href="analisar-envios-competicao.html?id=yoga-flex">Analisar envio</a>.</p>
+                        <span class="notification-meta">20 de Maio de 2025, 10:00</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
     </main>
+
+    <script src="js/auth.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // auth.js já deve ter sido executado e feito o redirecionamento se não houver userRole.
+            const userRole = localStorage.getItem('userRole');
+
+            const athleteNotificationsDiv = document.getElementById('athlete-notifications-container');
+            const creatorNotificationsDiv = document.getElementById('creator-notifications-container');
+            const noNotificationsMessage = document.getElementById('no-notifications-message');
+            let hasNotifications = false;
+
+            if (userRole === 'atleta' && athleteNotificationsDiv) {
+                athleteNotificationsDiv.style.display = 'block';
+                if (athleteNotificationsDiv.querySelector('ul .notification-item')) { // Verifica se há itens na lista
+                    hasNotifications = true;
+                }
+            } else if (userRole === 'criador' && creatorNotificationsDiv) {
+                creatorNotificationsDiv.style.display = 'block';
+                if (creatorNotificationsDiv.querySelector('ul .notification-item')) { // Verifica se há itens na lista
+                    hasNotifications = true;
+                }
+            }
+
+            if (!hasNotifications && noNotificationsMessage) {
+                noNotificationsMessage.style.display = 'block';
+            }
+        });
+    </script>
 
 </body>
 </html>

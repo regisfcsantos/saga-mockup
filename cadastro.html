@@ -15,7 +15,7 @@
         <h1>Crie sua Conta</h1>
         <p class="form-subtitle">É rápido e fácil. Comece sua jornada fitness!</p>
 
-        <form action="meu-perfil.html" method="GET">
+        <form id="cadastroForm">
             <div class="form-group">
                 <label for="fullName">Nome Completo</label>
                 <input type="text" id="fullName" name="fullName" placeholder="Seu nome completo" required>
@@ -52,6 +52,53 @@
             <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
         </div>
     </main>
+
+    <script src="js/auth.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cadastroForm = document.getElementById('cadastroForm');
+            if (cadastroForm) {
+                cadastroForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Previne o envio real do formulário
+
+                    const userRoleSelect = document.getElementById('userType'); // Seu select já tem o ID correto
+                    const userNameInput = document.getElementById('fullName'); // Seu input de nome já tem o ID correto
+                    const emailInput = document.getElementById('email');
+                    const passwordInput = document.getElementById('password');
+                    const confirmPasswordInput = document.getElementById('confirmPassword');
+
+                    const userRole = userRoleSelect.value;
+                    const userName = userNameInput.value.trim();
+                    // const userEmail = emailInput.value.trim(); // Se quiser salvar o email
+                    const password = passwordInput.value;
+                    const confirmPassword = confirmPasswordInput.value;
+
+                    if (!userName) {
+                        alert('Por favor, informe seu nome completo.');
+                        return;
+                    }
+                    if (!userRole) {
+                        alert('Por favor, selecione o tipo de perfil (Eu quero).');
+                        return;
+                    }
+                    if (password.length < 6) {
+                        alert('A senha deve ter no mínimo 6 caracteres.');
+                        return;
+                    }
+                    if (password !== confirmPassword) {
+                        alert('As senhas não coincidem.');
+                        return;
+                    }
+
+                    localStorage.setItem('userRole', userRole);
+                    localStorage.setItem('userName', userName);
+                    // localStorage.setItem('userEmail', userEmail); // Descomente para salvar o email
+                    alert('Cadastro (simulado) com sucesso como ' + userRole + '! Redirecionando...');
+                    window.location.href = 'meu-perfil.html';
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>

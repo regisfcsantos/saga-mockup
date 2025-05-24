@@ -50,17 +50,39 @@
         </div>
     </main>
 
+    <script src="js/auth.js" defer></script>
     <script>
-        document.getElementById('videoSubmissionForm').addEventListener('submit', function(event) {
-            // event.preventDefault(); // Descomente para testes se não quiser redirecionar
-            const videoLink = document.getElementById('videoLink').value;
-            if (videoLink) {
-                alert('Vídeo enviado com sucesso (simulação)! Você será redirecionado.');
-            } else {
-                alert('Por favor, insira o link do vídeo.');
-                event.preventDefault(); // Impede o envio se o link estiver vazio
+        document.addEventListener('DOMContentLoaded', function() { // Envolver em DOMContentLoaded por segurança
+            const videoSubmissionForm = document.getElementById('videoSubmissionForm');
+            if (videoSubmissionForm) {
+                // Adicionar nome da competição dinamicamente se vier pela URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const competicaoNome = urlParams.get('competicaoNome') || "[Nome da Competição Dinâmico]"; // Pega da URL ou usa placeholder
+                const competicaoId = urlParams.get('id') || "id-da-competicao-dinamico";
+
+                const pageTitle = document.querySelector('main.form-container h1');
+                if (pageTitle) {
+                    pageTitle.textContent = `Enviar Vídeo para: ${decodeURIComponent(competicaoNome.replace(/\+/g, ' '))}`;
+                }
+                const hiddenCompIdInput = videoSubmissionForm.querySelector('input[name="competicaoId"]');
+                if (hiddenCompIdInput) {
+                    hiddenCompIdInput.value = competicaoId;
+                }
+
+
+                videoSubmissionForm.addEventListener('submit', function(event) {
+                    // event.preventDefault(); // Descomente para testes se não quiser redirecionar
+                    const videoLinkInput = document.getElementById('videoLink'); // Seu input já tem o ID correto
+                    if (videoLinkInput && videoLinkInput.value) {
+                        alert('Vídeo enviado com sucesso (simulação)! Você será redirecionado.');
+                        // Adiciona o ID da competição ao action do formulário para redirecionamento correto
+                        this.action = `detalhes-competicao.html?id=${competicaoId}&submission_status=success`;
+                    } else {
+                        alert('Por favor, insira o link do vídeo.');
+                        event.preventDefault(); // Impede o envio se o link estiver vazio
+                    }
+                });
             }
-            // O formulário continuará para o 'action' especificado
         });
     </script>
 

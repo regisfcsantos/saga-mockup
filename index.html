@@ -19,7 +19,7 @@
         <h1 class="page-title">Explore Desafios e Competições</h1>
         <p class="page-subtitle">Encontre a competição perfeita para você e supere seus limites!</p>
 
-        <section class="creator-actions">
+        <section class="creator-actions" style="display: none;">
             <p>Pronto para inspirar atletas? Crie seu próprio desafio!</p>
             <a href="criar-editar-competicao.html" class="btn btn-secondary" style="width: auto;">+ Criar Nova Competição</a>
         </section>
@@ -71,6 +71,20 @@
 
             </section>
     </main>
+
+    <script src="js/auth.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userRole = localStorage.getItem('userRole');
+            const creatorActionsSection = document.querySelector('.creator-actions');
+
+            if (userRole === 'criador' && creatorActionsSection) {
+                creatorActionsSection.style.display = 'block'; // Ou 'flex' se o CSS original usar isso
+            } else if (creatorActionsSection) {
+                creatorActionsSection.style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 </html>

@@ -9,12 +9,22 @@
 
     <header class="header-placeholder">
         <a href="index.html" class="logo-header">FitnessChallenges</a>
-        </header>
+    </header>
 
     <main class="form-container"> <h1>Entrar</h1>
         <p class="form-subtitle">Bem-vindo de volta! Faça login para continuar.</p>
 
-        <form action="index.html" method="GET">
+        <form id="loginForm">
+            
+            <div class="form-group">
+                <label for="loginUserType">Entrar como:</label>
+                <select id="loginUserType" name="loginUserType" required>
+                    <option value="" disabled selected>Selecione seu perfil...</option>
+                    <option value="atleta">Atleta</option>
+                    <option value="criador">Criador</option>
+                </select>
+            </div>
+            
             <div class="form-group">
                 <label for="email">Endereço de e-mail</label>
                 <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
@@ -32,6 +42,42 @@
             <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
         </div>
     </main>
+
+    <script src="js/auth.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Previne o envio real do formulário
+
+                    const userRoleSelect = document.getElementById('loginUserType');
+                    const emailInput = document.getElementById('email'); // Seu input de email já tem o ID correto
+
+                    const userRole = userRoleSelect.value;
+                    const userEmail = emailInput.value.trim(); // Apenas para simulação, não estamos validando
+                    // Simulando um nome de usuário a partir do email ou perfil
+                    const userName = userEmail.split('@')[0] || (userRole === 'atleta' ? 'Atleta Teste' : 'Criador Teste');
+
+                    if (!userRole) {
+                        alert('Por favor, selecione seu tipo de perfil para entrar.');
+                        return;
+                    }
+                    // Aqui você poderia adicionar uma simulação de validação de email/senha se quisesse
+                    // if (userEmail !== "teste@teste.com" || document.getElementById('password').value !== "senha") {
+                    //     alert('Email ou senha inválidos (simulação).');
+                    //     return;
+                    // }
+
+                    localStorage.setItem('userRole', userRole);
+                    localStorage.setItem('userName', userName);
+                    // localStorage.setItem('userEmail', userEmail); // Descomente para salvar o email
+                    alert('Login (simulado) com sucesso como ' + userRole + '! Redirecionando...');
+                    window.location.href = 'index.html';
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
