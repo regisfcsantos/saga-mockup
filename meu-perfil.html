@@ -89,9 +89,8 @@
     <script src="js/auth.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // auth.js já deve ter sido executado e feito o redirecionamento se não houver userRole.
-            // Ele também atualiza o título h1.
-            const userRole = localStorage.getItem('userRole');
+            // auth.js já atualizou o título h1 e lidou com redirecionamentos se não logado.
+            const userRole = localStorage.getItem('userRole'); // Pega o perfil AQUI também
 
             const atletaSection = document.getElementById('atleta-section');
             const criadorSection = document.getElementById('criador-section');
@@ -100,7 +99,10 @@
                 atletaSection.style.display = 'block';
             } else if (userRole === 'criador' && criadorSection) {
                 criadorSection.style.display = 'block';
+            } else if (userRole) { // Se userRole existe mas as seções não foram encontradas
+                console.error('Perfil de usuário definido (' + userRole + ') mas as seções correspondentes não foram encontradas em meu-perfil.html.');
             }
+            // Se userRole não existir, auth.js já deve ter redirecionado.
         });
     </script>
 

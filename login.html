@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Fitness Challenges</title>
-    <link rel="stylesheet" href="css/style.css"> </head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
-
     <header class="header-placeholder">
-        <a href="index.html" class="logo-header">FitnessChallenges</a>
-    </header>
-
-    <main class="form-container"> <h1>Entrar</h1>
+        <a href="index.html" class="logo-header">Fitness Challenges</a>
+        </header>
+    <main class="form-container">
+        <h1>Entrar</h1>
         <p class="form-subtitle">Bem-vindo de volta! Faça login para continuar.</p>
 
-        <form id="loginForm">
-            
+        <form id="loginForm"> {/* Garanta que o form tem este ID e SEM action/method */}
             <div class="form-group">
                 <label for="loginUserType">Entrar como:</label>
                 <select id="loginUserType" name="loginUserType" required>
@@ -24,18 +23,16 @@
                     <option value="criador">Criador</option>
                 </select>
             </div>
-            
             <div class="form-group">
                 <label for="email">Endereço de e-mail</label>
-                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" value="usuario@exemplo.com" required>
             </div>
-
             <div class="form-group">
                 <label for="password">Senha</label>
-                <input type="password" id="password" name="password" placeholder="Sua senha" required>
+                <input type="password" id="password" name="password" placeholder="Sua senha" value="senha" required>
             </div>
-
-            <button type="submit" class="btn btn-primary">Entrar</button> </form>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
 
         <div class="additional-links">
             <p><a href="#">Esqueceu sua senha?</a></p>
@@ -43,41 +40,36 @@
         </div>
     </main>
 
-    <script src="js/auth.js" defer></script>
+    {/* auth.js NÃO é necessário aqui, pois esta página define o login */}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const loginForm = document.getElementById('loginForm');
             if (loginForm) {
                 loginForm.addEventListener('submit', function(event) {
-                    event.preventDefault(); // Previne o envio real do formulário
+                    event.preventDefault();
 
                     const userRoleSelect = document.getElementById('loginUserType');
-                    const emailInput = document.getElementById('email'); // Seu input de email já tem o ID correto
+                    const emailInput = document.getElementById('email');
 
-                    const userRole = userRoleSelect.value;
-                    const userEmail = emailInput.value.trim(); // Apenas para simulação, não estamos validando
-                    // Simulando um nome de usuário a partir do email ou perfil
+                    const userRole = userRoleSelect.value; // Pega o valor do SELECT
+                    const userEmail = emailInput.value.trim();
                     const userName = userEmail.split('@')[0] || (userRole === 'atleta' ? 'Atleta Teste' : 'Criador Teste');
 
-                    if (!userRole) {
+                    if (!userRole) { // Verifica se um perfil foi selecionado
                         alert('Por favor, selecione seu tipo de perfil para entrar.');
                         return;
                     }
-                    // Aqui você poderia adicionar uma simulação de validação de email/senha se quisesse
-                    // if (userEmail !== "teste@teste.com" || document.getElementById('password').value !== "senha") {
-                    //     alert('Email ou senha inválidos (simulação).');
-                    //     return;
-                    // }
 
+                    // Salva no localStorage
                     localStorage.setItem('userRole', userRole);
                     localStorage.setItem('userName', userName);
-                    // localStorage.setItem('userEmail', userEmail); // Descomente para salvar o email
+                    // localStorage.setItem('userEmail', userEmail); // Se quiser salvar
+
                     alert('Login (simulado) com sucesso como ' + userRole + '! Redirecionando...');
-                    window.location.href = 'index.html';
+                    window.location.href = 'index.html'; // Redireciona para a página inicial após o login
                 });
             }
         });
     </script>
-
 </body>
 </html>
