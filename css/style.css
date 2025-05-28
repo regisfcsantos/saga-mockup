@@ -23,17 +23,32 @@ body {
 /* Header Placeholder (Navbar Simulada) */
 .header-placeholder {
     width: 100%;
-    padding: 15px 20px;
+    padding: 0; /* Remover padding daqui, será aplicado no wrapper interno se necessário */
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-    text-align: center;
-    position: fixed; /* Fixa no topo */
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    display: flex; /* Para alinhar itens na navbar */
-    justify-content: space-between; /* Para espaçar logo e links */
+    /* display: flex; não é mais necessário aqui, o wrapper cuidará disso */
+}
+
+.header-content-wrapper {
+    max-width: 1200px; /* Use a mesma max-width do seu .main-content ou outra referência de largura */
+    width: 90%; /* Ou 100% se quiser que use todo o max-width, com padding nas laterais */
+    margin: 0 auto; /* Centraliza o wrapper */
+    padding: 15px 0; /* Padding vertical. O padding horizontal vem do width/max-width e margin:auto */
+                      /* Ou, se width: 100%, use: padding: 15px 20px; (ou seu padding lateral original) */
+    display: flex;
+    justify-content: space-between; /* Logo à esquerda, burger à direita */
     align-items: center;
+}
+
+.logo-header {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FF5A5F;
+    text-decoration: none;
 }
 
 .header-placeholder .logo-header {
@@ -353,6 +368,8 @@ body {
     margin-bottom: 30px;
 }
 
+/* CSS para a Barra de Filtro */
+
 .filter-bar {
     background-color: #fff;
     padding: 15px;
@@ -361,7 +378,54 @@ body {
     margin-bottom: 30px;
     display: flex;
     gap: 15px;
-    align-items: center;
+    align-items: center; /* Importante para alinhamento vertical dos itens */
+}
+
+/* Estilo específico para o input de texto na filter-bar */
+.filter-bar input[type="text"].form-group { /* Adicionamos .form-group para manter a especificidade ou caso você use essa classe nele */
+    /* Altura e Cantos Arredondados (para combinar com o botão) */
+    padding-top: 12px;    /* Ajuste para corresponder ao padding vertical do botão */
+    padding-bottom: 12px; /* Ajuste para corresponder ao padding vertical do botão */
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 8px;   /* Mesmo border-radius do botão */
+    font-size: 16px;      /* Mesmo font-size do botão */
+    line-height: normal;  /* Garante que o texto interno não afete a altura excessivamente */
+    
+    /* Cor de Fundo e Borda */
+    background-color: #f5f5f5; /* Um cinza bem claro, um pouco mais escuro que o branco */
+    border: 1px solid #f5f5f5; /* Borda da mesma cor do fundo para parecer "sem borda" */
+                                /* Ou use 'border: none;' se preferir, mas pode precisar ajustar padding para altura */
+    
+    /* Outros estilos herdados de .form-group input que podem ser mantidos ou sobrescritos */
+    width: 100%; /* Se ele não for flex-grow:1 */
+    flex-grow: 1; /* Para ocupar o espaço disponível */
+    margin-bottom: 0; /* Já estava no seu CSS para .filter-bar input */
+    box-sizing: border-box; /* Garante que padding e border estão inclusos na altura/largura total */
+}
+
+/* Garanta que o botão na filter-bar também use box-sizing e tenha padding similar */
+.filter-bar .btn {
+    padding: 12px 20px; /* Este já estava no seu CSS e é uma boa base para a altura */
+    border-radius: 8px; /* Este já estava */
+    font-size: 16px;    /* Este já estava */
+    line-height: normal;
+    box-sizing: border-box;
+    /* Se o botão tiver uma borda que você não quer, defina 'border: none;' */
+}
+
+.filter-bar select.form-group {
+    /* Você pode querer aplicar estilos similares ao select para consistência */
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: normal;
+    box-sizing: border-box;
+    /* background-color: #f5f5f5; */ /* Opcional */
+    /* border: 1px solid #f5f5f5; */ /* Opcional */
+    flex-grow: 1;
+    margin-bottom: 0;
 }
 
 .filter-bar input[type="text"],
@@ -856,8 +920,8 @@ body {
     margin-right: 15px; /* Espaçamento à direita do ícone */
     display: inline-block;
     line-height: 1; /* Ajuda no alinhamento vertical */
-    order: -1; /* Se quiser que o burger venha antes do logo no flex container */
 }
+
 
 /* Ajuste no header para display flex se já não estiver */
 .header-placeholder {
