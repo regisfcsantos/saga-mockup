@@ -916,18 +916,8 @@ body {
     font-size: 28px; /* Tamanho do ícone */
     cursor: pointer;
     color: #333; /* Cor do ícone, ajuste conforme seu design */
-    margin-left: 15px; /* Adiciona margem à esquerda se o logo estiver primeiro */
-    margin-right: 15px; /* Espaçamento à direita do ícone */
-    display: inline-block;
-    line-height: 1; /* Ajuda no alinhamento vertical */
 }
 
-
-/* Ajuste no header para display flex se já não estiver */
-.header-placeholder {
-    display: flex;
-    align-items: center;
-}
 
 /* Estilos para a Sidenav (Menu Lateral) */
 .sidenav {
