@@ -9,13 +9,18 @@
 <body>
 
     <header class="header-placeholder">
-        <a href="index.html" class="logo-header">Saga</a>
-        <nav class="nav-links">
-            <a href="index.html" class="[active_se_index]">Competições</a>
-            <a href="meu-perfil.html" class="[active_se_meu_perfil]">Meu Perfil</a>
-            <a href="notificacoes.html" class="[active_se_notificacoes]">Notificações <span class="notification-badge">3</span></a>
-            <a href="login.html">Sair</a> </nav>
+        <span class="burger-icon" id="burgerIcon">&#9776;</span> <a href="index.html" class="logo-header">FitnessChallenges</a>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a> <nav class="nav-links">
+                <a href="index.html">Competições</a>
+                <a href="meu-perfil.html">Meu Perfil</a>
+                <a href="notificacoes.html">Notificações <span class="notification-badge">3</span></a>
+                <a href="login.html">Sair</a> {/* Este link "Sair" continuará sendo gerenciado pelo seu js/auth.js */}
+            </nav>
+        </div>
     </header>
+
 
     <main class="form-container form-container-large"> <h1>Criar Nova Competição</h1>
         <p class="form-subtitle">Defina todos os detalhes para o seu novo desafio!</p>
@@ -100,6 +105,7 @@
     </main>
 
     <script src="js/auth.js" defer></script>
+    <script src="js/sidenav.js" defer></script>
     <script>
         document.getElementById('competitionForm').addEventListener('submit', function(event) {
             alert('Competição criada/atualizada com sucesso (simulação)!');

@@ -841,3 +841,83 @@ body {
     font-size: 18px;
     color: #777;
     background-color
+}
+
+/* css/style.css */
+
+/* ... seus estilos existentes ... */
+
+/* Estilos para o Ícone Burger */
+.burger-icon {
+    font-size: 28px; /* Tamanho do ícone */
+    cursor: pointer;
+    color: #333; /* Cor do ícone, ajuste conforme seu design */
+    margin-left: 15px; /* Adiciona margem à esquerda se o logo estiver primeiro */
+    margin-right: 15px; /* Espaçamento à direita do ícone */
+    display: inline-block;
+    line-height: 1; /* Ajuda no alinhamento vertical */
+    order: -1; /* Se quiser que o burger venha antes do logo no flex container */
+}
+
+/* Ajuste no header para display flex se já não estiver */
+.header-placeholder {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para a Sidenav (Menu Lateral) */
+.sidenav {
+    height: 100%; /* Altura total da tela */
+    width: 0; /* Largura inicial 0, será alterada por JS para abrir */
+    position: fixed; /* Fica fixo na tela, sobrepondo outros conteúdos */
+    z-index: 1001; /* Acima do header-placeholder (que tem z-index: 1000 no seu CSS original) */
+    top: 0;
+    left: 0;
+    background-color: #ffffff; /* Cor de fundo do menu */
+    overflow-x: hidden; /* Desabilita scroll horizontal dentro do menu fechado */
+    transition: 0.4s; /* Efeito de transição suave para abrir/fechar */
+    padding-top: 60px; /* Espaço no topo para o botão de fechar ou para não sobrepor o header fixo */
+    box-shadow: 3px 0 6px rgba(0,0,0,0.15); /* Sombra para dar profundidade */
+}
+
+/* Classe 'open' será adicionada/removida via JavaScript */
+.sidenav.open {
+    width: 260px; /* Largura da sidenav quando aberta, ajuste conforme necessário */
+}
+
+/* Estilos para os links dentro da Sidenav (que estão dentro da nav.nav-links movida) */
+.sidenav .nav-links a {
+    padding: 12px 15px 12px 32px; /* Padding: topo direita baixo esquerda */
+    text-decoration: none;
+    font-size: 18px; /* Tamanho da fonte dos links no menu */
+    color: #333; /* Cor dos links */
+    display: block; /* Faz cada link ocupar uma linha inteira */
+    transition: 0.3s; /* Transição suave para efeito hover */
+    border-bottom: 1px solid #f0f0f0; /* Linha separadora sutil */
+}
+.sidenav .nav-links a:last-child {
+    border-bottom: none; /* Remove a borda do último link */
+}
+
+.sidenav .nav-links a:hover {
+    background-color: #f9f9f9; /* Cor de fundo ao passar o mouse */
+    color: #FF5A5F; /* Cor do texto ao passar o mouse (sua cor primária) */
+}
+
+/* Estilo para o botão de fechar (X) dentro da Sidenav */
+.sidenav .closebtn {
+    position: absolute; /* Posição absoluta em relação à .sidenav */
+    top: 15px;
+    right: 25px;
+    font-size: 36px;
+    color: #555; /* Cor do "X" */
+    padding: 0; /* Remove padding se for um link */
+    line-height: 1;
+}
+.sidenav .closebtn:hover {
+    color: #FF5A5F; /* Cor do "X" ao passar o mouse */
+    background-color: transparent !important; /* Garante que não haja fundo no hover do X */
+}
+
+/* Para telas menores, você pode querer que o ícone burger seja mais proeminente
+   ou esconder outros elementos do header, mas por agora vamos focar na funcionalidade. */
